@@ -16,12 +16,14 @@ myForm.addEventListener("submit", event => {
     event.target.elements.firstName.value = ""
 
     saveNames(names)
-
 })
 
 // Listing back to the page
 let buttonToList = document.querySelector(".to-list")
-buttonToList.addEventListener("click", event => {
+buttonToList.addEventListener("click", () => {
+    // Clear <div class="list-names"> to prevent duplicates
+    document.querySelector(".list-names").innerHTML = ""
+    
     let namesFromStorage = JSON.parse(localStorage.getItem("names"))
     console.log(namesFromStorage)
 

@@ -29,8 +29,39 @@ const generateHTMLStructure = oneName => {
     button.textContent = "Clear the name"
     newDiv.appendChild(button)
 
+    button.addEventListener("click", () => {
+        removeName(names, oneName.id)
+        saveNames(names)
+        toListAgain()
+    })
+
     newSpan.textContent = oneName.firstName
     newDiv.appendChild(newSpan)
 
     return newDiv
+}
+
+/* According to the ID we will find its index and delete it with splice () */
+
+const removeName = (ourNames, id) => {
+    const index = ourNames.findIndex(nameWantToCheck => {
+        return nameWantToCheck.id === id
+    })
+
+    if (index > -1) {
+        ourNames.splice(index, 1)
+    }
+}
+
+/* When we delete a name from the Local Storage, this function secure rewriting of the Local Storage */
+
+const toListAgain = () => {
+    document.querySelector(".list-names").innerHTML = ""
+
+    let newData = getSavedNames()
+
+    newData.forEach(oneName => {
+        const newContent = generateHTMLStructure(oneName)
+        document.querySelector(".list-names").appendChild(newContent)
+    })
 }
