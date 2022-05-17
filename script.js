@@ -5,15 +5,19 @@ const names = getSavedNames()
 
 // Send a form and save to the Local Storage
 let myForm = document.querySelector("#test-form")
+let myCheckbox = document.querySelector(".my-checkbox")
+
 myForm.addEventListener("submit", event => {
     event.preventDefault()
 
     names.push({
         id: uuidv4(),
-        firstName: event.target.elements.firstName.value
+        firstName: event.target.elements.firstName.value,
+        adult: myCheckbox.checked
     })
 
     event.target.elements.firstName.value = ""
+    myCheckbox.checked = false
 
     saveNames(names)
 })
@@ -25,7 +29,6 @@ buttonToList.addEventListener("click", () => {
     document.querySelector(".list-names").innerHTML = ""
     
     let namesFromStorage = JSON.parse(localStorage.getItem("names"))
-    console.log(namesFromStorage)
 
     namesFromStorage.forEach(oneName => {
         const oneNameHTML = generateHTMLStructure(oneName)

@@ -74,3 +74,12 @@ input[type="submit"]:hover {
     margin-left: 20px;
     font-size: 20px;
 }
+
+.adult {
+    text-decoration: underline;
+    color:green;
+}
+
+.no-adult {
+    color: red;
+}

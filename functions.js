@@ -22,7 +22,7 @@ const saveNames = oneName => {
 
 const generateHTMLStructure = oneName => {
     const newDiv = document.createElement("div")
-    const newSpan = document.createElement("span")
+    const newLink = document.createElement("a")
     const button = document.createElement("button")
 
     // Setting delete button
@@ -35,8 +35,16 @@ const generateHTMLStructure = oneName => {
         toListAgain()
     })
 
-    newSpan.textContent = oneName.firstName
-    newDiv.appendChild(newSpan)
+    newLink.textContent = oneName.firstName
+    if (oneName.adult === true) {
+        newLink.classList.add("adult")
+    } else {
+        newLink.classList.add("no-adult")
+    }
+
+    newLink.setAttribute("href", `/edit.html#${oneName.id}`)
+
+    newDiv.appendChild(newLink)
 
     return newDiv
 }
