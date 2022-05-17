@@ -1,4 +1,76 @@
 body {
-    background-color: rgb(34, 31, 31);
-    color:white
+    background: rgb(34, 31, 31);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+form {
+   text-align: center; 
+}
+
+input[type="text"] {
+    outline: none;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: hsl(155, 85%, 16%);
+    color: white;
+    width: 100px
+}
+
+input[type="submit"]:hover {
+    background: rgb(18, 100, 18);
+    cursor: pointer;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.to-list {
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    font-size: 20px;
+    background: #064b2e;
+    color: white;
+    width: 100px;
+}
+
+.to-list:hover {
+    background: rgb(18, 100, 18);
+    cursor: pointer;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.list-names {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    color: white;
+}
+
+.list-names button {
+    background: rgb(121, 37, 37);
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: white;
+    padding: 5px 10px;
+}
+
+.list-names button:hover {
+    background: rgb(151, 75, 75);
+    box-shadow: 2px 2px 5px gray;
+}
+
+.list-names span {
+    margin-left: 20px;
+    font-size: 20px;
 }
