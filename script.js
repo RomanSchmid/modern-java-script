@@ -35,3 +35,8 @@ buttonToList.addEventListener("click", () => {
         document.querySelector(".list-names").appendChild(oneNameHTML)
     })
 })
+
+// Reload the main page
+window.addEventListener("storage", () => {
+    location.reload()
+})
